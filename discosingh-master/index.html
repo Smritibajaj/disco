@@ -47,6 +47,15 @@
             ,800);
             }
 
+            function pauseisreq(){
+                setInterval(function(){
+                $('#box1').addClass('white');
+                $('#box2').addClass('white');
+                $('#box3').addClass('white');
+                $('#box4').addClass('white');
+                        
+            },100);
+            }
 
 $('.play-icon').on('click', function () {
          
@@ -63,6 +72,7 @@ $('.play-icon').on('click', function () {
         {
                 song.pause();
                 console.log('Pausing');
+                pauseisreq()
                
                 }
         });
