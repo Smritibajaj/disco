@@ -12,10 +12,10 @@
     <div class="wrapper">
         <div class="welcome-screen">
             <div class="header">
-                <div class="red1" id="box1"></div>
-                <div class="green1" id="box2"></div>
-                <div class="blue1" id="box3"></div>
-                <div class="yellow1" id="box4"></div>
+                <div class="yellow" id="box1"></div>
+                <div class="blue" id="box2"></div>
+                <div class="green" id="box3"></div>
+                <div class= "red" id="box4" background-color: #></div>
                 <section class="content">
                     <audio src="song.mp3"></audio>
                 </section>
@@ -29,72 +29,41 @@
 
     </script>
     <script>
+        function changebackground(){
+            setInterval (function(){
+             $('#box1').removeClass('yellow').addClass('red');
+             $('#box2').removeClass('blue').addClass('yellow');
+             $('#box3').removeClass('green').addClass('blue');
+             $('#box4').removeClass('red').addClass('green');
+             },300)
+        }
+        function pausebackground(){
+            setInterval (function(){
+             $('#box1').removeClass('red').addClass('yellow');
+             $('#box2').removeClass('yellow').addClass('blue');
+             $('#box3').removeClass('blue').addClass('green');
+             $('#box4').removeClass('green').addClass('red');
+             }
+            ,800);
+            }
 
-      function onebox(){
-          var elem = document.querySelector('#box1');
-          if( elem.className == "red1") {
-              
-          }
-      }
 
-       // function callMe1(){
-         //   setInterval(function() {
-                // change 1st to 4th
-                // 2nd to 1st
-                // 3rd to 2nd
-                // 4th to 3rd
-
-               // change1to4();
-               // change2to1();
-               // change3to2();
-               // change4to3();
-
-            // $('.box1').removeClass('red1').addClass('green1');;
-            // $('.box2').removeClass('green1').addClass('blue1');
-            // $('.box3').removeClass('blue1').addClass('yellow1');
-            // $('.box4').removeClass('yellow1').addClass('red1');
-           // }, 1000);
-       // }
-
-        function callMe2(){
-            setInterval(function() {
-            $('.box1').removeClass('green1').addClass('blue1');
-            $('.box2').removeClass('blue1').addClass('yellow1');
-            $('.box3').removeClass('yellow1').addClass('red1');
-            $('.box4').removeClass('red1').addClass('green1');
-            }, 1000);}
-
-            function callMe3(){
-            setInterval(function() {
-            $('.box1').removeClass('blue1').addClass('yellow1');
-            $('.box2').removeClass('yellow1').addClass('red1');
-            $('.box3').removeClass('red1').addClass('green1');
-            $('.box4').removeClass('green1').addClass('blue1');
-            }, 1000);}
-        
-
-        
-
-        $('.play-icon').on('click', function () {
-            callMe1()
-            console.log("i am running");
-            
-            //callMe2()
-            console.log("i am not running")
-            
-            //callMe3()
-            console.log("i am walking");
-
-           
+$('.play-icon').on('click', function () {
+         
             var song = document.querySelector('audio');
             if (song.paused == true) {
                 song.play();
-                console.log("playing");}
+                console.log("playing")
+                changebackground()
+                 pausebackground()
+                
+            }
 
             else 
         {
                 song.pause();
                 console.log('Pausing');
+               
                 }
         });
     </script>

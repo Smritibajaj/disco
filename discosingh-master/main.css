@@ -45,16 +45,18 @@ background-image: url(background-img.jpg);
 .input-wrapper{
     text-align: center;
 }
-
-.red1{ 
+.white{
+    background: whitesmoke;
+}
+.red{ 
 background:  red
 }
-.yellow1{
+.yellow{
 background:  yellow
 }
-.green1{
+.green{
 background:  green
 }
-.blue1{
+.blue{
 background:blue
 }
